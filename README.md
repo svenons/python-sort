@@ -1,4 +1,4 @@
-# python-sort - Part of my Programming II class.
+# python-sort - Part of my Programming II class. Open this in raw if you want to understand. GitHub shows it in a shitty way
 
 Create 7 Python files:
 	bubble_sort.py
