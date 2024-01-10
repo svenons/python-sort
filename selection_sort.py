@@ -1,7 +1,13 @@
-def selectionsort(list):
-    for x in range(len(list)):
-        minx = x
-        for y in range(x+1, len(list)):
-            if list[minx] > list[y]:
-                minx = y
-    list[x], list[minx] = list[minx], list[x]
+def selectionsort(arr):
+    n = len(arr)
+    # Traverse through all array elements
+    for i in range(n):
+        # Find the minimum element in remaining unsorted array
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+
+        # Swap the found minimum element with the first element
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr

@@ -1,28 +1,33 @@
-def mergesort(list):
-    if len(list) > 1:
-        vidus = len(list) // 2
-        sak = list[:vidus]
-        beig = list[vidus:]
-        mergesort(sak)
-        mergesort(beig)
-        x = 0
-        y = 0
-        z = 0
-        while x < len(sak) and y < len(beig):
-            if sak[x] < beig[y]:
-                list[z] = sak[x]
-                x += 1
-            else:
-                list[z] = beig[y]
-                y += 1
-            z += 1
-        
-        while x < len(sak):
-            list[y] = sak[x]
-            x += 1
-            z +=1
+def mergesort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2  # Finding the mid of the array
+        L = arr[:mid]        # Dividing the array elements into 2 halves
+        R = arr[mid:]
 
-        while y < len(beig):
-            list[z] = beig[y]
-            y += 1
-            z += 1
+        mergesort(L)        # Sorting the first half
+        mergesort(R)        # Sorting the second half
+
+        i = j = k = 0
+
+        # Copy data to temp arrays L[] and R[]
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        # Checking if any element was left
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+
+    return arr

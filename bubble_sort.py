@@ -1,7 +1,11 @@
-def bubblesort(list):
-    for x in range(len(list)-1,0,-1):
-        for y in range(x):
-            if list[y]>list[y+1]:
-                temp = list[y]
-                list[y] = list[y+1]
-                list[y+1] = temp
+def bubblesort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
