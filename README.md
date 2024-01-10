@@ -4,7 +4,7 @@ Sorting algorithms in python
 
 To run this project, run the main.py file
 
-7 sorting algorithms:
+6 sorting algorithms:
 
 	bubblesort in bubble_sort.py
 	insertionsort in insertion_sort.py
